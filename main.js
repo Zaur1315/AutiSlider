@@ -179,9 +179,18 @@ const validate = ()=>{
 };
 
 const quizOver = () =>{
-    document.querySelector('.quiz-over-modal').classList.add('active');
-    correctAnswer.innerHTML = score;
-    numberOfAllQuestion2.innerHTML = questions.length;
+    if(score >=3){
+        document.querySelector('.quiz-over-modal').classList.add('active');
+        correctAnswer.innerHTML = score;
+        numberOfAllQuestion2.innerHTML = questions.length;
+    }else{
+        let m = document.querySelector('.h');
+        m.innerHTML = 'Результат не очень!!!'
+        document.querySelector('.quiz-over-modal').classList.add('active');
+        correctAnswer.innerHTML = score;
+        numberOfAllQuestion2.innerHTML = questions.length;
+        
+    }
 };
 
 const tryAgain = ()=>{
